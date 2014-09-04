@@ -48,4 +48,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)finishEditBlendName:(UITextField *)sender {
+    NSString *str = self.blendNameTextField.text;
+    NSLog(@"%@", str);
+}
 @end
