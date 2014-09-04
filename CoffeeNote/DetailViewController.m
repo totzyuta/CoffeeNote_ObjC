@@ -31,7 +31,7 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        // self.detailDescriptionLabel.text = [self.detailItem description];
     }
 }
 
@@ -49,7 +49,22 @@
 }
 
 - (IBAction)tapSaveButton:(id)sender {
-    NSString *str = self.blendNameTextField.text;
-    NSLog(@"%@", str);
+    NSString *blendName = self.blendNameTextField.text;
+    NSString *comment = self.commentTextField.text;
+    NSLog(@"%@", blendName);
+    NSLog(@"%@", comment);
 }
+
+- (IBAction)finishEditBlendNameTextField:(UITextField *)sender {
+}
+
+- (IBAction)finishEditCommentTextField:(UITextField *)sender {
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 @end

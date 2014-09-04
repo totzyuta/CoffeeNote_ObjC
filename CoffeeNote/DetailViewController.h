@@ -12,11 +12,11 @@
 
 @property (strong, nonatomic) id detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-
 @property (weak, nonatomic) IBOutlet UITextField *blendNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 
-- (IBAction)finishEditBlendName:(UITextField *)sender;
 - (IBAction)tapSaveButton:(id)sender;
+- (IBAction)finishEditBlendNameTextField:(UITextField *)sender;
+- (IBAction)finishEditCommentTextField:(UITextField *)sender;
 
 @end

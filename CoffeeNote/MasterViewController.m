@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     self.title = @"Coffee Note";
-    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    // self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
