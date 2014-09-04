@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Coffee Notes";
+    self.title = @"Coffee Note";
     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     
 	// Do any additional setup after loading the view, typically from a nib.
@@ -69,7 +69,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"ccc, MMM d"];
+    NSDate *now = [NSDate date];
+//    cell.textLabel.text = [object description];
+    NSString *tmp = [formatter stringFromDate:now];
+    cell.textLabel.text = [NSString stringWithFormat:@"Coffee@%@",tmp];
     return cell;
 }
 

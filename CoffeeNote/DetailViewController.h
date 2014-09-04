@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *blendNameTextField;
 
 - (IBAction)finishEditBlendName:(UITextField *)sender;
+- (IBAction)tapSaveButton:(id)sender;
 
 @end

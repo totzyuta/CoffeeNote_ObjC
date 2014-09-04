@@ -48,7 +48,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)finishEditBlendName:(UITextField *)sender {
+- (IBAction)tapSaveButton:(id)sender {
     NSString *str = self.blendNameTextField.text;
     NSLog(@"%@", str);
 }
