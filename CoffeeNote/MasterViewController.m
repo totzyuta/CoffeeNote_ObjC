@@ -31,9 +31,11 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    
+    /*
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +70,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
+    // NSDate *object = _objects[indexPath.row];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"ccc, MMM d"];
     NSDate *now = [NSDate date];
@@ -118,5 +120,11 @@
         [[segue destinationViewController] setDetailItem:object];
     }
 }
+
+- (IBAction)returnMaster:(UIStoryboardSegue *)segue {
+    
+}
+
+
 
 @end

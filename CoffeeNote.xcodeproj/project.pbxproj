@@ -22,6 +22,8 @@
 		D647752419B77712001560B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D647750319B77712001560B3 /* UIKit.framework */; };
 		D647752C19B77712001560B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D647752A19B77712001560B3 /* InfoPlist.strings */; };
 		D647752E19B77712001560B3 /* CoffeeNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D647752D19B77712001560B3 /* CoffeeNoteTests.m */; };
+		D6D5F40E19B9D3A300392A48 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D5F40D19B9D3A300392A48 /* EditViewController.m */; };
+		D6FDA70319BB3D940064CFBD /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FDA70219BB3D940064CFBD /* NewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		D647752919B77712001560B3 /* CoffeeNoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoffeeNoteTests-Info.plist"; sourceTree = "<group>"; };
 		D647752B19B77712001560B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D647752D19B77712001560B3 /* CoffeeNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeNoteTests.m; sourceTree = "<group>"; };
+		D6D5F40C19B9D3A300392A48 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditViewController.h; path = ../EditViewController.h; sourceTree = "<group>"; };
+		D6D5F40D19B9D3A300392A48 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditViewController.m; path = ../EditViewController.m; sourceTree = "<group>"; };
+		D6FDA70119BB3D940064CFBD /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewViewController.h; path = ../NewViewController.h; sourceTree = "<group>"; };
+		D6FDA70219BB3D940064CFBD /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewViewController.m; path = ../NewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,10 @@
 				D647751119B77712001560B3 /* Main.storyboard */,
 				D647751419B77712001560B3 /* MasterViewController.h */,
 				D647751519B77712001560B3 /* MasterViewController.m */,
+				D6FDA70119BB3D940064CFBD /* NewViewController.h */,
+				D6FDA70219BB3D940064CFBD /* NewViewController.m */,
+				D6D5F40C19B9D3A300392A48 /* EditViewController.h */,
+				D6D5F40D19B9D3A300392A48 /* EditViewController.m */,
 				D647751719B77712001560B3 /* DetailViewController.h */,
 				D647751819B77712001560B3 /* DetailViewController.m */,
 				D647751A19B77712001560B3 /* Images.xcassets */,
@@ -257,7 +267,9 @@
 				D647751019B77712001560B3 /* AppDelegate.m in Sources */,
 				D647751619B77712001560B3 /* MasterViewController.m in Sources */,
 				D647750C19B77712001560B3 /* main.m in Sources */,
+				D6FDA70319BB3D940064CFBD /* NewViewController.m in Sources */,
 				D647751919B77712001560B3 /* DetailViewController.m in Sources */,
+				D6D5F40E19B9D3A300392A48 /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +474,7 @@
 				D647753319B77712001560B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D647753419B77712001560B3 /* Build configuration list for PBXNativeTarget "CoffeeNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +483,7 @@
 				D647753619B77712001560B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

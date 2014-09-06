@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-- (void)configureView;
+// - (void)configureView;
 @end
 
 @implementation DetailViewController
@@ -22,16 +22,7 @@
         _detailItem = newDetailItem;
         
         // Update the view.
-        [self configureView];
-    }
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        // self.detailDescriptionLabel.text = [self.detailItem description];
+        // [self configureView];
     }
 }
 
@@ -39,7 +30,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    // [self configureView];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,8 +43,22 @@
 - (IBAction)tapSaveButton:(id)sender {
     NSString *blendName = self.blendNameTextField.text;
     NSString *comment = self.commentTextField.text;
+    
     NSLog(@"%@", blendName);
     NSLog(@"%@", comment);
+    
+    // Set NSUserDefaults
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *coffeeData = @[blendName, comment];
+    
+    // Get String of Date Now
+    NSDate *nowdate = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd/HH/mm/ss"];
+    NSString *nowdateString = [formatter stringFromDate:nowdate];
+    
+    // Save data by the date string
+    [myDefaults setObject:coffeeData forKey:nowdateString];
 }
 
 - (IBAction)finishEditBlendNameTextField:(UITextField *)sender {
@@ -64,6 +70,10 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (IBAction)returnDetail:(UIStoryboardSegue *)segue {
+    
 }
 
 
