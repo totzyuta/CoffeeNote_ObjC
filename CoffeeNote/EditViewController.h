@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  EditViewController.h
 //  CoffeeNote
 //
 //  Created by 凸 on 9/6/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface EditViewController : UIViewController
 
 @end
