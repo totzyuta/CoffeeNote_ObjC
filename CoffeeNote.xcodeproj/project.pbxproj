@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D63435BB19BB4B7D00A5E8E8 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63435BA19BB4B7D00A5E8E8 /* TableViewController.m */; };
+		D63435BE19BB4BB100A5E8E8 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63435BD19BB4BB100A5E8E8 /* NewViewController.m */; };
+		D63435C119BB4BC600A5E8E8 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63435C019BB4BC600A5E8E8 /* EditViewController.m */; };
+		D63435C419BB4BD800A5E8E8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63435C319BB4BD800A5E8E8 /* DetailViewController.m */; };
 		D647750019B77712001560B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64774FF19B77712001560B3 /* Foundation.framework */; };
 		D647750219B77712001560B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D647750119B77712001560B3 /* CoreGraphics.framework */; };
 		D647750419B77712001560B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D647750319B77712001560B3 /* UIKit.framework */; };
@@ -14,8 +18,6 @@
 		D647750C19B77712001560B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D647750B19B77712001560B3 /* main.m */; };
 		D647751019B77712001560B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D647750F19B77712001560B3 /* AppDelegate.m */; };
 		D647751319B77712001560B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D647751119B77712001560B3 /* Main.storyboard */; };
-		D647751619B77712001560B3 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D647751519B77712001560B3 /* MasterViewController.m */; };
-		D647751919B77712001560B3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D647751819B77712001560B3 /* DetailViewController.m */; };
 		D647751B19B77712001560B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D647751A19B77712001560B3 /* Images.xcassets */; };
 		D647752219B77712001560B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D647752119B77712001560B3 /* XCTest.framework */; };
 		D647752319B77712001560B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64774FF19B77712001560B3 /* Foundation.framework */; };
@@ -35,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D63435B919BB4B7D00A5E8E8 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = ../TableViewController.h; sourceTree = "<group>"; };
+		D63435BA19BB4B7D00A5E8E8 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = ../TableViewController.m; sourceTree = "<group>"; };
+		D63435BC19BB4BB100A5E8E8 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		D63435BD19BB4BB100A5E8E8 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		D63435BF19BB4BC600A5E8E8 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		D63435C019BB4BC600A5E8E8 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		D63435C219BB4BD800A5E8E8 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D63435C319BB4BD800A5E8E8 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D64774FC19B77712001560B3 /* CoffeeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64774FF19B77712001560B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D647750119B77712001560B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,10 +56,6 @@
 		D647750E19B77712001560B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D647750F19B77712001560B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D647751219B77712001560B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D647751419B77712001560B3 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		D647751519B77712001560B3 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		D647751719B77712001560B3 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		D647751819B77712001560B3 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D647751A19B77712001560B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D647752019B77712001560B3 /* CoffeeNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D647752119B77712001560B3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,10 +124,14 @@
 				D647750E19B77712001560B3 /* AppDelegate.h */,
 				D647750F19B77712001560B3 /* AppDelegate.m */,
 				D647751119B77712001560B3 /* Main.storyboard */,
-				D647751419B77712001560B3 /* MasterViewController.h */,
-				D647751519B77712001560B3 /* MasterViewController.m */,
-				D647751719B77712001560B3 /* DetailViewController.h */,
-				D647751819B77712001560B3 /* DetailViewController.m */,
+				D63435B919BB4B7D00A5E8E8 /* TableViewController.h */,
+				D63435BA19BB4B7D00A5E8E8 /* TableViewController.m */,
+				D63435C219BB4BD800A5E8E8 /* DetailViewController.h */,
+				D63435C319BB4BD800A5E8E8 /* DetailViewController.m */,
+				D63435BC19BB4BB100A5E8E8 /* NewViewController.h */,
+				D63435BD19BB4BB100A5E8E8 /* NewViewController.m */,
+				D63435BF19BB4BC600A5E8E8 /* EditViewController.h */,
+				D63435C019BB4BC600A5E8E8 /* EditViewController.m */,
 				D647751A19B77712001560B3 /* Images.xcassets */,
 				D647750619B77712001560B3 /* Supporting Files */,
 			);
@@ -255,9 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D647751019B77712001560B3 /* AppDelegate.m in Sources */,
-				D647751619B77712001560B3 /* MasterViewController.m in Sources */,
+				D63435BB19BB4B7D00A5E8E8 /* TableViewController.m in Sources */,
 				D647750C19B77712001560B3 /* main.m in Sources */,
-				D647751919B77712001560B3 /* DetailViewController.m in Sources */,
+				D63435BE19BB4BB100A5E8E8 /* NewViewController.m in Sources */,
+				D63435C119BB4BC600A5E8E8 /* EditViewController.m in Sources */,
+				D63435C419BB4BD800A5E8E8 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +474,7 @@
 				D647753319B77712001560B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D647753419B77712001560B3 /* Build configuration list for PBXNativeTarget "CoffeeNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +483,7 @@
 				D647753619B77712001560B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
