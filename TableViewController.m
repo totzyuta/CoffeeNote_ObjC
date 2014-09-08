@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSourceiPhone;
 @property (nonatomic, strong) NSArray *dataSourceAndroid;
+@property (nonatomic, strong) NSArray *dataSourceCoffeeNotes;
 
 @end
 
@@ -27,8 +28,42 @@
     self.tableView.dataSource = self;
     
     // テーブルに表示したいデータソースをセット
-    self.dataSourceiPhone = @[@"iPhone 4", @"iPhone 4S", @"iPhone 5", @"iPhone 5c", @"iPhone 5s"];
-    self.dataSourceAndroid = @[@"Nexus", @"Galaxy", @"Xperia"];
+    self.dataSourceCoffeeNotes = @[@"Nexus", @"Galaxy", @"Xperia"];
+}
+
+
+- (IBAction)insertNewObject:(id)sender {
+    NSArray *array = @[@"HOUSE BLEND", @"Starbucks Coffee", @"comment", @"2014/09/08"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:array forKey:@"coffeeNote"];
+    BOOL successful = [defaults synchronize];
+    if (successful) {
+        NSLog(@"%@", @"Successfully Data Saved");
+    } else {
+        NSLog(@"%@", @"Data NOT Saved");
+    }
+    
+    self.dataSourceCoffeeNotes = array;
+
+}
+
+- (void)deleteObject {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"coffeeNote"];
+    BOOL successful = [defaults synchronize];
+    if (successful) {
+        NSLog(@"%@", @"Data Successfully Deleted");
+    } else {
+        NSLog(@"%@", @"Theres NO Data");
+        return;
+    }
+    
+    // データが削除されていることを確認する
+    NSArray *array = [defaults arrayForKey:@"coffeeNote"];
+    NSLog(@"%d:%@", successful, array);
+    if (!array) {
+        NSLog(@"%@", @"Data Successfully Deleted (Confirmed)");
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,28 +83,9 @@
 {
     NSInteger dataCount;
     
-    // テーブルに表示するデータ件数を返す
-    switch (section) {
-        case 0:
-            dataCount = self.dataSourceiPhone.count;
-            break;
-        case 1:
-            dataCount = self.dataSourceAndroid.count;
-            break;
-        default:
-            break;
-    }
+    dataCount = self.dataSourceCoffeeNotes.count;
+    
     return dataCount;
-}
-
-/**
- テーブルに表示するセクション（区切り）の件数を返します。（オプション）
- 
- @return NSInteger : セクションの数
- */
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
 }
 
 
@@ -90,17 +106,8 @@
                                       reuseIdentifier:CellIdentifier];
     }
     
-    switch (indexPath.section) {
-        case 0:
-            cell.textLabel.text = self.dataSourceiPhone[indexPath.row];
-            break;
-        case 1:
-            cell.textLabel.text = self.dataSourceAndroid[indexPath.row];
-            break;
-        default:
-            break;
-    }
-    
+    cell.textLabel.text = self.dataSourceCoffeeNotes[indexPath.row];
+
     return cell;
 }
 
@@ -115,7 +122,28 @@
 }
  */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *array = [defaults arrayForKey:@"coffeeNote"];
+    if (array) {
+        for (NSString *data in array) {
+            NSLog(@"%@", data);
+        }
+    } else {
+        NSLog(@"%@", @"データが存在しません。");
+    }
+}
+
 -(IBAction)returnTable:(UIStoryboardSegue *)segue {
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSString *sendtext = [NSString stringWithFormat:@"%ld行目", indexPath.row];
+        [segue destinationViewController];
+    }
+    
 }
 
 @end

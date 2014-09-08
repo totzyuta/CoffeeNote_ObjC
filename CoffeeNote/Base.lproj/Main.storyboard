@@ -21,9 +21,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Coffee Note" id="7Di-oN-mSz">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0aj-s2-han">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yFQ-TY-U4e">
                                             <connections>
-                                                <segue destination="3Hx-I4-7ai" kind="modal" id="5c5-cY-F7G"/>
+                                                <action selector="insertNewObject:" destination="hc7-uY-7U1" id="du2-g3-jr1"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
