@@ -27,24 +27,64 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    // テーブルに表示したいデータソースをセット
-    self.dataSourceCoffeeNotes = @[@"Nexus", @"Galaxy", @"Xperia"];
+    // Fetch all datas of NSUserDefaults
+    NSDictionary *defaultsDictionary = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    NSLog(@"defualts:%@", defaultsDictionary);
+    
+    // Create Array for dataSource
+    NSArray *allDataArray;
+    for (NSString *key in [defaultsDictionary allKeys]) {
+         allDataArray = [allDataArray arrayByAddingObject:key];
+    }
+    
+    NSLog(@"allDataArray: %@", allDataArray);
+    
+    // Set values
+    // self.dataSourceCoffeeNotes = allDataArray;
+    self.dataSourceCoffeeNotes = @[@"Sample Note"];
+
+    
+    /*
+    // To Delete All NSUserDefaults
+    NSDictionary *defaultsDictionary = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    for (NSString *key in [defaultsDictionary allKeys]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    */
 }
 
 
 - (IBAction)insertNewObject:(id)sender {
-    NSArray *array = @[@"HOUSE BLEND", @"Starbucks Coffee", @"comment", @"2014/09/08"];
+    // date for note
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]];
+    [format setDateFormat:@"MM/dd(HH:mm)"];
+    NSString *date = [format stringFromDate:[NSDate date]];
+    NSLog(@"Date For Note: %@", date);
+
+    // NSArray *array = @[@"HOUSE BLEND", @"Starbucks Coffee", @"comment", @"2014/09/08"];
+    NSArray *array = @[date];
+    
+    // date for key
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd-mm-ss"];
+    NSString *dateLog = [dateFormatter stringFromDate:[NSDate date]];
+    NSLog(@"Date For Key: %@", dateLog);
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:array forKey:@"coffeeNote"];
-    BOOL successful = [defaults synchronize];
-    if (successful) {
+    [defaults setObject:array forKey:dateLog];
+    
+    [defaults synchronize];
+    // BOOL successful = [defaults synchronize];
+    /*if (successful) {
         NSLog(@"%@", @"Successfully Data Saved");
     } else {
         NSLog(@"%@", @"Data NOT Saved");
-    }
+    }*/
     
-    self.dataSourceCoffeeNotes = array;
-
+    
+    
 }
 
 - (void)deleteObject {
@@ -123,6 +163,8 @@
  */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Read datas
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *array = [defaults arrayForKey:@"coffeeNote"];
     if (array) {
@@ -137,6 +179,7 @@
 -(IBAction)returnTable:(UIStoryboardSegue *)segue {
 }
 
+/* Method to show detail page
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -145,5 +188,6 @@
     }
     
 }
+ */
 
 @end
