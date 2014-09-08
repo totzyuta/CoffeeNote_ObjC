@@ -27,22 +27,27 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    // Fetch all datas of NSUserDefaults
-    NSDictionary *defaultsDictionary = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
-    NSLog(@"defualts:%@", defaultsDictionary);
+    // Fetch only set in this app
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dic = [defaults persistentDomainForName:appDomain];
+    NSLog(@"defualts:%@", dic);
     
     // Create Array for dataSource
-    NSArray *allDataArray;
-    for (NSString *key in [defaultsDictionary allKeys]) {
-         allDataArray = [allDataArray arrayByAddingObject:key];
+    NSMutableArray *allDataArray = [[NSMutableArray alloc] init];
+    // NSArray *allDataArray;
+    for (NSString *key in [dic allKeys]) {
+        [allDataArray addObject:key];
+        // allDataArray = @[key];
+        NSLog(@"%@", key);
     }
     
     NSLog(@"allDataArray: %@", allDataArray);
+
     
     // Set values
-    // self.dataSourceCoffeeNotes = allDataArray;
-    self.dataSourceCoffeeNotes = @[@"Sample Note"];
-
+    self.dataSourceCoffeeNotes = allDataArray;
+    
     
     /*
     // To Delete All NSUserDefaults
@@ -163,7 +168,6 @@
  */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     // Read datas
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *array = [defaults arrayForKey:@"coffeeNote"];
